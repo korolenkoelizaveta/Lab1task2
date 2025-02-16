@@ -1,4 +1,5 @@
-﻿public class Second
+namespace Lab1task2;
+public class Second
 {
     static void Main()
     {
@@ -6,8 +7,9 @@
         Console.Write("Введите количество пар: ");
         int x = Convert.ToInt32(Console.ReadLine());
         double[] a = new double[x], b = new double[x];
-            
-        for (int i = 0; i < x; i++) {
+
+        for (int i = 0; i < x; i++)
+        {
             Console.WriteLine($"Введите значения для пары {i + 1} через пробел:");
             string[] input = Console.ReadLine().Split();
             a[i] = double.Parse(input[0]);
@@ -25,12 +27,14 @@
         // КОНЕЦ взаимодействия с пользователем
     }
 
-    static double[] Average(double[] a, double[] b) {
+    public static double[] Average(double[] a, double[] b)
+    {
 
-        double[] res = new double[2];
+        double[] res = { double.MinValue, 0};
 
 
-        for (int i = 0; i < a.Length; i++) {
+        for (int i = 0; i < a.Length; i++)
+        {
             double sr = (a[i] + b[i]) / 2;
 
             if (sr > res[0])
@@ -44,6 +48,6 @@
             }
         }
         return res;
-    
+
     }
 }
